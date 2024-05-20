@@ -73,10 +73,11 @@ const esp_task_wdt_config_t esp_task_wdt = {
 // =================================================================================================
 // --- Task Declaration ---
 void Smart_Timer_Task(void *pvParameter);
+void Blink_Led_Task(void *pvParameter);
 
 // =================================================================================================
 // --- Main Functions ---
-/*void app_main(void)
+void app_main(void)
 {
     //esp_task_wdt_init(&esp_task_wdt);
     xTaskCreate(Smart_Timer_Task,
@@ -85,34 +86,32 @@ void Smart_Timer_Task(void *pvParameter);
                 NULL,
                 5,
                 NULL);
+
+    xTaskCreate(Blink_Led_Task,
+                "Blink_LED_Task",
+                10000,
+                NULL,
+                5,
+                NULL);
     
     ios_init();                     // Initialize IOs
     set_display(0x00);              // display starts turned off
 }
-*/
+
 
 // =================================================================================================
 // --- Smart Timer Task ---
-//void Smart_Timer_Task(void *pvParameter)
-//{
-void app_main(void)
+void Smart_Timer_Task(void *pvParameter)
 {
-    ios_init();                     // Initialize IOs
-    set_display(0x00);              // display starts turned off
-
     while(true)                     // Infinity loop
     {      
         read_bts();                 // Reads keyboard
         set_display(timer_val);     // Updates display
 
-        st_ledob = !st_ledob;   // Toggle status of onboard LED
-
         if(start_flag)              // Starts set flag
         {
             timer_val--;            // Decrements timer_val
 
-//            gpio_set_level(LED_OB, st_ledob); // Toggle LED_onboard
-//            delay_ms(1000);               // each second
             if((timer_val < 0) && (Perform_count == true))             // timer_val lower than zero?
             {                             // yes
                printf("COUNTNG has finished!!!\n"); 
@@ -131,12 +130,23 @@ void app_main(void)
             }
         } // ende if !timer_val
 
-        gpio_set_level(LED_OB, st_ledob); // Toggle LED_onboard
         if(Perform_count == false)
         {
             delay_ms(10);               // each second
         }
     }     // end if start_flag
+}
+
+// --- Blink Led Task ---
+void Blink_Led_Task(void *pvParameter)
+{
+    while(true)
+    {
+        st_ledob = !st_ledob;   // Toggle status of onboard LED
+        gpio_set_level(LED_OB, st_ledob); // Toggle LED_onboard
+        delay_ms(100);               // each second
+    }
+        
 }
 // =================================================================================================
 // --- Functions Development ---

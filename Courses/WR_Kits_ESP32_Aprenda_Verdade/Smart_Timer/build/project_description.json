@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "Smart_Timer",
-    "project_version":    "d40c80e-dirty",
+    "project_version":    "3ac3789-dirty",
     "project_path":       "C:/Users/Roniere/ESP32/Courses/WR_Kits_ESP32_Aprenda_Verdade/Smart_Timer",
     "idf_path":           "C:/Users/Roniere/esp/v5.2.1/esp-idf",
     "build_dir":          "C:/Users/Roniere/ESP32/Courses/WR_Kits_ESP32_Aprenda_Verdade/Smart_Timer/build",
