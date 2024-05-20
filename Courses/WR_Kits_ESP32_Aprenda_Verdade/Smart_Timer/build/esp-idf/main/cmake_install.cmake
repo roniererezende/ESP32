@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Roniere/esp/Projects/Smart_Timer/main
+# Install script for directory: C:/Users/Roniere/ESP32/Courses/WR_Kits_ESP32_Aprenda_Verdade/Smart_Timer/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
