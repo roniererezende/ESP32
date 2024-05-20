@@ -5,18 +5,18 @@ cmake_minimum_required(VERSION 3.5)
 
 file(MAKE_DIRECTORY
   "C:/Users/Roniere/esp/v5.2.1/esp-idf/components/bootloader/subproject"
-  "C:/Users/Roniere/esp/Projects/Smart_Timer/build/bootloader"
-  "C:/Users/Roniere/esp/Projects/Smart_Timer/build/bootloader-prefix"
-  "C:/Users/Roniere/esp/Projects/Smart_Timer/build/bootloader-prefix/tmp"
-  "C:/Users/Roniere/esp/Projects/Smart_Timer/build/bootloader-prefix/src/bootloader-stamp"
-  "C:/Users/Roniere/esp/Projects/Smart_Timer/build/bootloader-prefix/src"
-  "C:/Users/Roniere/esp/Projects/Smart_Timer/build/bootloader-prefix/src/bootloader-stamp"
+  "C:/Users/Roniere/ESP32/Courses/WR_Kits_ESP32_Aprenda_Verdade/Smart_Timer/build/bootloader"
+  "C:/Users/Roniere/ESP32/Courses/WR_Kits_ESP32_Aprenda_Verdade/Smart_Timer/build/bootloader-prefix"
+  "C:/Users/Roniere/ESP32/Courses/WR_Kits_ESP32_Aprenda_Verdade/Smart_Timer/build/bootloader-prefix/tmp"
+  "C:/Users/Roniere/ESP32/Courses/WR_Kits_ESP32_Aprenda_Verdade/Smart_Timer/build/bootloader-prefix/src/bootloader-stamp"
+  "C:/Users/Roniere/ESP32/Courses/WR_Kits_ESP32_Aprenda_Verdade/Smart_Timer/build/bootloader-prefix/src"
+  "C:/Users/Roniere/ESP32/Courses/WR_Kits_ESP32_Aprenda_Verdade/Smart_Timer/build/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "C:/Users/Roniere/esp/Projects/Smart_Timer/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "C:/Users/Roniere/ESP32/Courses/WR_Kits_ESP32_Aprenda_Verdade/Smart_Timer/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "C:/Users/Roniere/esp/Projects/Smart_Timer/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "C:/Users/Roniere/ESP32/Courses/WR_Kits_ESP32_Aprenda_Verdade/Smart_Timer/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
 endif()

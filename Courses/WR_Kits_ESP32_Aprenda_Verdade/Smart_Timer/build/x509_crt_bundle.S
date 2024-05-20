@@ -1,4 +1,4 @@
-/* * Data converted from C:/Users/Roniere/esp/Projects/Smart_Timer/build/esp-idf/mbedtls/x509_crt_bundle
+/* * Data converted from C:/Users/Roniere/ESP32/Courses/WR_Kits_ESP32_Aprenda_Verdade/Smart_Timer/build/esp-idf/mbedtls/x509_crt_bundle
  */
 .data
 .section .rodata.embedded
